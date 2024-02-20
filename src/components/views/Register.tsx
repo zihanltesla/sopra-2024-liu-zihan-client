@@ -60,8 +60,6 @@ const Register = () => {
 
           <Button onClick={() => navigate("/login")} style={{ marginBottom: "20px" }}>Back to Login</Button>
 
-
-
           <FormField
             label="Username"
             placeholder="Enter username..."
