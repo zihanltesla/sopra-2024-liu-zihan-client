@@ -84,12 +84,10 @@ const Login = () => {
             >
               Login
             </Button>
-
-
           </div>
 
           <div className="login button-container-register">
-          <Button
+            <Button
               width="100%"
               onClick={goToRegister}
             >
