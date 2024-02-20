@@ -58,7 +58,8 @@ const Register = () => {
 
         <div className="register form">
 
-          <Button onClick={() => navigate("/login")} style={{ marginBottom: '20px' }}>Back to Login</Button>
+          <Button onClick={() => navigate("/login")} style={{ marginBottom: "20px" }}>Back to Login</Button>
+
 
 
           <FormField
