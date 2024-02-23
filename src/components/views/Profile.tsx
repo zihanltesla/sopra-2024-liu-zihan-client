@@ -1,29 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { api, handleError } from 'helpers/api';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { api, handleError } from "helpers/api";
 import { Button } from "../ui/Button";
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from "react-router-dom";
 import BaseContainer from "components/ui/BaseContainer";
-import 'styles/views/Profile.scss';
-import { Spinner } from 'components/ui/Spinner';
+import "styles/views/Profile.scss";
+import { Spinner } from "components/ui/Spinner";
 
 interface User {
     id: number;
     username: string;
     registerDate: string;
     birthday?: string;
-    status: 'ONLINE' | 'OFFLINE';
+    status: "ONLINE" | "OFFLINE";
 }
 
 const ProfilePage = () => {
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
-  const localId = parseInt(localStorage.getItem('id') ?? '0', 10);
+  const localId = parseInt(localStorage.getItem("id") ?? "0", 10);
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
-    axios.get('https://source.unsplash.com/random')
+    axios.get("https://source.unsplash.com/random")
       .then((response) => setImageUrl(response.request.responseURL))
       .catch((error) => console.log(error));
   }, []);
@@ -79,7 +79,7 @@ const ProfilePage = () => {
         </div>
         {user ? <ProfileField functionuser={user} /> : <Spinner />}
         <div className="profile back-button">
-          <Button width="100%" onClick={() => navigate('/game')}>Go Back</Button>
+          <Button width="100%" onClick={() => navigate("/game")}>Go Back</Button>
         </div>
       </div>
     </BaseContainer>
