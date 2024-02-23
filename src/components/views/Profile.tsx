@@ -64,7 +64,7 @@ const ProfilePage = () => {
         </div>
         {showEditButton && (
           <div className="profile edit-button">
-            <Button width="100%" onClick={() => navigate(`/editprofile`)}>Edit Profile</Button>
+            <Button width="100%" onClick={() => navigate("/editprofile")}>Edit Profile</Button>
           </div>
         )}
       </div>

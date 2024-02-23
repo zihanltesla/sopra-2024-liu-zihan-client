@@ -32,7 +32,7 @@ const FormField = props => {
 const PasswordField = props => {
   const [showPassword, setShowPassword] = useState(false);
   
-    //use the funtion to control the show of the password
+  //use the funtion to control the show of the password
   function toggleShowPassword() {
     setShowPassword(!showPassword);
   }
@@ -96,7 +96,7 @@ const Register = props => {
       console.log(user.id)
 
       // Regist successfully worked --> navigate to the route /Login in the GameRouter
-      navigate(`/Login`);
+      navigate("/Login");
     } catch (error) {
       alert(`Something went wrong during the register: \n${handleError(error)}`);
     }
@@ -113,11 +113,11 @@ const Register = props => {
           />
           
           <div className="register password">
-          <PasswordField
-            label="Password (Do not contain space):"
-            value={password}
-            onChange={n => setPassword(n)}
-          />
+            <PasswordField
+              label="Password (Do not contain space):"
+              value={password}
+              onChange={n => setPassword(n)}
+            />
           
           </div>
 
@@ -142,7 +142,7 @@ const Register = props => {
 
           <div className="register button-container">
               Already have an account?
-            <Link to={`/login`}>Login</Link>
+            <Link to={"/login"}>Login</Link>
           </div>
 
           

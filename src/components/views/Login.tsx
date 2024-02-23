@@ -48,9 +48,9 @@ const PasswordField = props => {
         value={props.value}
         onChange={e => props.onChange(e.target.value)}
       />
-            <div className="login button-container1">
-      <Button width="25%" onClick={toggleShowPassword }>{showPassword ? "Hide" : "Show" } 
-      </Button>
+      <div className="login button-container1">
+        <Button width="25%" onClick={toggleShowPassword }>{showPassword ? "Hide" : "Show" } 
+        </Button>
       </div>
     </div>
   );
@@ -87,7 +87,7 @@ const Login = props => {
       localStorage.setItem("username",user.username);
 
       // Login successfully worked --> navigate to the route /game in the GameRouter
-      navigate(`/game`);
+      navigate("/game");
     } catch (error) {
       alert(`Something went wrong during the login: \n${handleError(error)}`);
     }
@@ -108,26 +108,26 @@ const Login = props => {
             onChange={n => setPassword(n)}
           />
 
-        <div className="login button-container">
-          <Button
-            disabled={!username || !password || username.trim() ===" " || password.trim() ===" "}
-            width="100%"
-            onClick={() => doLogin()}
-          >
-            login
-          </Button>
-        </div>
+          <div className="login button-container">
+            <Button
+              disabled={!username || !password || username.trim() ===" " || password.trim() ===" "}
+              width="100%"
+              onClick={() => doLogin()}
+            >
+              login
+            </Button>
+          </div>
 
-        <div className="login button-container">
-            Dont have an account?
-          <Link to={`/register`}>Sign up</Link>
-        </div>
+          <div className="login button-container">
+              Dont have an account?
+            <Link to={"/register"}>Sign up</Link>
+          </div>
 
         
+        </div>
       </div>
-    </div>
-  </BaseContainer>
-);
+    </BaseContainer>
+  );
 };
 
 /**
