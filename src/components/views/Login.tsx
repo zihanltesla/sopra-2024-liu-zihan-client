@@ -68,7 +68,7 @@ PasswordField.propTypes = {
   onChange: PropTypes.func,
 };
 
-const Login = props => {
+const Login = () => {
   const navigate = useNavigate();
   const [password, setPassword] = useState(null);
   const [username, setUsername] = useState(null);
