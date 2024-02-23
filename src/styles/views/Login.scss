@@ -1,4 +1,4 @@
-@import "../theme";
+@import 'styles/theme';
 
 .login {
   &.container {
@@ -43,17 +43,16 @@
     color: $textColor;
     margin-bottom: 10px;
     text-transform: lowercase;
-    font-weight: 600;
+    font-weight: 300;
   }
   &.button-container {
     display: flex;
     justify-content: center;
-    margin-top: 1.5em;
+    margin-top: 2em;
   }
-
-  &.button-container-register {
+  &.button-container1 {
     display: flex;
     justify-content: center;
-    margin-top: 1em;
+    margin-top: -1em;
   }
 }

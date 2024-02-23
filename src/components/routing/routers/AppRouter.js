@@ -4,7 +4,9 @@ import {GameGuard} from "../routeProtectors/GameGuard";
 import GameRouter from "./GameRouter";
 import {LoginGuard} from "../routeProtectors/LoginGuard";
 import Login from "../../views/Login";
-import Register from "../../views/Register";
+import Register from "components/views/Register";
+import ProfilePage from "components/views/Profile";
+import EditProfile from "components/views/EditProfile";
 
 /**
  * Main router of your application.
@@ -19,29 +21,34 @@ const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-
         <Route path="/game/*" element={<GameGuard />}>
-          <Route path="/game/*" element={<GameRouter base="/game"/>} />
+          <Route index element={<GameRouter base="/game" />} />
         </Route>
 
+        {/* Assuming LoginGuard and GameGuard components are updated to work with React Router v6 */}
         <Route path="/login" element={<LoginGuard />}>
-          <Route path="/login" element={<Login/>} />
+          <Route index element={<Login />} />
         </Route>
 
+
+        {/* guard to rergister */}
         <Route path="/register" element={<LoginGuard />}>
-          <Route path="/register" element={<Register/>} />
+          <Route index element={<Register />} />
         </Route>
 
-        <Route path="/" element={
-          <Navigate to="/game" replace />
-        }/>
+        {/* guard to user profile page */}
+        <Route path="/user/:id" element={<GameGuard />}>
+          <Route index element={<ProfilePage />} />
+        </Route>
 
+        <Route path="/editprofile" element={<GameGuard />}>
+          <Route index element={<EditProfile />} />
+        </Route>
+
+        <Route path="/" element={<Navigate to="/login" replace />} />
       </Routes>
     </BrowserRouter>
   );
 };
 
-/*
-* Don't forget to export your component!
- */
 export default AppRouter;
