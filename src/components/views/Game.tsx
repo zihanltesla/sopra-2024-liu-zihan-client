@@ -56,18 +56,18 @@ const Game = () => {
   }, [navigate]); // Correct dependency
 
   const logout = async () => {
-    const id = localStorage.getItem('id');
-    localStorage.removeItem('token');
+    const id = localStorage.getItem("id");
+    localStorage.removeItem("token");
     try {
       const requestBody = JSON.stringify({id:id});
-      const response = await api.post('/users/logout', requestBody);
+      const response = await api.post("/users/logout", requestBody);
       console.log(response);
     
     } catch (error) {
       alert(`Something went wrong during the logout: \n${handleError(error)}`);
       
     }
-    navigate('/login');
+    navigate("/login");
   };
 
   let content = users.length > 0 ? (
