@@ -76,8 +76,8 @@ PasswordField.propTypes = {
 const Register = props => {
   const navigate = useNavigate();
 
-  const [username, setUsername] = useState(null);
-  const [password, setPassword] = useState(null);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
 
   const doregister = async () => {

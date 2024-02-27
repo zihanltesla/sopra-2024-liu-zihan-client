@@ -12,8 +12,8 @@ export const Button = props => (
 );
 
 
-Button.propTypes = {
-  width: PropTypes.number,
+Button.propTypes = { 
+  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   style: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.node,

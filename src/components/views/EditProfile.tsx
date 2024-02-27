@@ -9,7 +9,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 interface NameChangeFieldProps {
   type?: string;
-  value: string | null;
+  value: string | "";
   onChange: (value: string) => void;
 }
 
@@ -30,9 +30,9 @@ const EditProfile = () => {
   const userid = localStorage.getItem("id") ?? "";
 
   const [id] = useState<string>(userid);
-  const [username, setUsername] = useState<string | null>(null);
-  const [imageUrl, setImageUrl] = useState<string | null>(null);
-  const [birthday, setBirthday] = useState<string | null>(null);
+  const [username, setUsername] = useState<string | "">("");
+  const [imageUrl, setImageUrl] = useState<string | "">("");
+  const [birthday, setBirthday] = useState<string | "">("");
 
   useEffect(() => {
     axios.get("https://source.unsplash.com/random")

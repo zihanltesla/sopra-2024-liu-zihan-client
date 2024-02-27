@@ -19,8 +19,8 @@ const ProfilePage = () => {
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
   const localId = parseInt(localStorage.getItem("id") ?? "0", 10);
-  const [imageUrl, setImageUrl] = useState<string | null>(null);
-  const [user, setUser] = useState<User | null>(null);
+  const [imageUrl, setImageUrl] = useState<string | "">("");
+  const [user, setUser] = useState<User | "">("");
 
   useEffect(() => {
     axios.get("https://source.unsplash.com/random")
