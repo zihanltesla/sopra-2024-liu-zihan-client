@@ -53,7 +53,7 @@ const Game = () => {
     };
 
     fetchData();
-  }, [navigate]); // Correct dependency
+  }, []);
 
   const logout = async () => {
     const id = localStorage.getItem("id");
